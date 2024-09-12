@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+  int n;
+  cin>>n;
+  for(int i=1;i<=n;i++){
+    int sc1,sc2,sc3;
+    cin>>sc1>>sc2>>sc3;
+    int over=0;
+    
+    if(sc1>=60)
+      over++;
+    if(sc2>=60)
+      over++;
+    if(sc3>=60)
+      over++;
+    
+    if(over==3){
+      cout<<"P"<<endl;
+    }else if(over==2&&(sc1+sc2+sc3)>=220){
+      cout<<"P"<<endl;
+    }else if(over==2&&(sc1+sc2+sc3)<220){
+      cout<<"M"<<endl;
+    }else if(over==1&&((sc1>=80)||(sc2>=80)||(sc3>=80))){
+      cout<<"M"<<endl;
+    }else{
+      cout<<"F"<<endl;
+    }
+  }
+  return 0;
+}
