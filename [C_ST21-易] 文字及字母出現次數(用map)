@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+  string s;
+  int num=0;
+  getline(cin,s);
+  map<char,int> a;
+  for(int i=0;i<s.length();i++){
+    if(s[i]==' '){
+      num++;
+    }else{
+      a[s[i]]++;
+    }
+  }
+  cout<<num+1<<endl;
+  for(auto i:a){
+    cout<<i.first<<" : "<<i.second<<endl;
+  }
+  return 0;
+}
