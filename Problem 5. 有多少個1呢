@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+  int n;
+  cin>>n;
+  for(int i=1;i<=n;i++){
+    int a[32]={};
+    int num;
+    cin>>num;
+    bool min=false;
+    if(num<0){
+      num=-num;
+      num-=1;
+      min=true;
+      //cout<<"true"<<endl;
+    }
+    int index=0;
+    while(num>0){
+      a[index]=num%2;
+      num/=2;
+      index++;
+    }
+    /*for(int j=0;j<32;j++){
+      cout<<a[j]<<" ";
+    }
+    cout<<endl;*/
+    int count=0;
+    if(!min){
+      for(int j=0;j<32;j++){
+        if(a[j]==1){
+          count++;
+        }
+      }
+    }else{
+      for(int j=0;j<32;j++){
+        if(a[j]==0){
+          count++;
+        }
+      }
+    }
+    cout<<count<<endl;
+  }
+}
