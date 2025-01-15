@@ -1,36 +1,42 @@
-#include <bits/stdc++.h>
-using namespace std;
-int main(){
-  int coin[4]={1,5,10,50};
-  int tocoi,cate,num;
-  while(cin>>tocoi){
-    getchar();
-    cin>>cate;
-    getchar();
-    cin>>num;
-    int cost,flag=0;
-    if(cate==1)
-      cost=17;
-    else
-      cost=25;
-    tocoi-=cost*num;
-    int conum[4]={0};
-    for(int i=3;i>=0;i--){
-      while(tocoi>=coin[i]){
-        tocoi-=coin[i];
-        conum[i]++;
-      }
-    }
-    for(int i=0;i<4;i++){
-      if(conum[i]>0){
-        if(!flag){
-          flag=1;
-        }else{
-          cout<<",";
+#include <stdio.h>
+
+int main() {
+    int coin[4] = {1, 5, 10, 50};
+    int tocoi, cate, num;
+
+    while (scanf("%d", &tocoi) == 1) {
+        getchar(); 
+        scanf("%d", &cate);
+        getchar();
+        scanf("%d", &num);
+
+        int cost, flag = 0;
+        if (cate == 1)
+            cost = 17;
+        else
+            cost = 25;
+
+        tocoi -= cost * num;
+        int conum[4] = {0};
+
+        for (int i = 3; i >= 0; i--) {
+            while (tocoi >= coin[i]) {
+                tocoi -= coin[i];
+                conum[i]++;
+            }
         }
-        cout<<"Coin "<<coin[i]<<":"<<conum[i];
-      }
+
+        for (int i = 0; i < 4; i++) {
+            if (conum[i] > 0) {
+                if (!flag) {
+                    flag = 1;
+                } else {
+                    printf(",");
+                }
+                printf("Coin %d:%d", coin[i], conum[i]);
+            }
+        }
+        printf("\n");
     }
-    cout<<endl;
-  }
+    return 0;
 }
