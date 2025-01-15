@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int i, b;
+    scanf("%d", &i);
+    if (i > 31) {
+        printf("Value of more than 31\n");
+    } else {
+        b = pow(2, i);
+        printf("%d\n", b);
+    }
+    return 0;
+}
