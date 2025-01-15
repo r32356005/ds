@@ -1,20 +1,23 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
 int main(){
-    int n;
-    scanf("%d",&n);
-    for(int i=0;i<n;i++){
-        int S,K,M,D;
-        scanf("%d %d %d %d",&S,&K,&M,&D);
-        int sum=0;
-        if(D>=M)
-            sum += (S+(M*K));
-        else
-            sum += (S+(D*K));
-        int last=D-M;
-        if(last>=0){
-            sum+=(K+5)*last;
-        }
-        printf("%d\n",sum);
+  int n;
+  //cin>>n;
+ scanf("%d",&n);
+  for(int i=0;i<n;i++){
+    int S,K,M,D;
+    cin>>S>>K>>M>>D;
+     scanf("%d %d %d %d",&S,&K,&M,&D);
+    int sum=0;
+    if(D>=M)
+      sum+=(S+(M*K));
+    else 
+      sum+=(S+(D*K));
+    int last=D-M;
+    if(last>=0){
+      sum+=(K+5)*last;
     }
-    return 0;
+   printf("%d\n", sum);
+  }
+  return 0;
 }
