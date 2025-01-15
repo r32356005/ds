@@ -1,22 +1,27 @@
-#include <iostream>
-using namespace std;
-int main(){
-  int time;
-  cin>>time;
-  for(int i=0;i<time;i++){
-    string a;
-    int time=0;
-    int cou;
-    cin>>cou;
-    cin>>a;
-    int b[81]={0};
-    for(int j=0;j<cou;j++){
-      if(a[j]=='.'&&b[j+1]==0&&b[j]==0){
-        b[j+2]=1;
-        time=time+1;
-      }
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int time;
+    scanf("%d", &time);
+
+    for (int i = 0; i < time; i++) {
+        char a[81];
+        int cou, t = 0;
+        int b[81] = {0};
+
+        scanf("%d", &cou);
+        scanf("%s", a);
+
+        for (int j = 0; j < cou; j++) {
+            if (a[j] == '.' && b[j + 1] == 0 && b[j] == 0) {
+                b[j + 2] = 1;
+                t++;
+            }
+        }
+
+        printf("%d\n", t);
     }
-    cout<<time<<endl;
-  }
-  return 0;
+
+    return 0;
 }
