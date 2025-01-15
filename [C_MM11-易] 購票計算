@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, c, total;
+    scanf("%d", &total);
+    a = total / 10;
+    b = (total / 5) - (2 * a);
+    c = total % 5;
+    printf("NT10=%d\n", a);
+    printf("NT5=%d\n", b);
+    printf("NT1=%d\n", c);
+    return 0;
+}
