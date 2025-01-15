@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
-    int x, y;
+    int x, y, dis;
     while (scanf("%d %d", &x, &y) == 2) {
-        if ((x > 100 || x < 0) || (y > 100 || y < 0)) {
+        dis = pow(x, 2) + pow(y, 2);
+        if (dis > 40000) {
             printf("outside\n");
         } else {
             printf("inside\n");
